@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "u101",
+    "fullName": "Muki Ja",
+    "username": "muki",
+    "password": "muki1234",
+    "role": "user",
+    "imgUrl": "https://dog.ceo/api/breeds/image/random"
+  },
+  {
+    "_id": "u102",
+    "fullName": "Tomer C",
+    "username": "tomer",
+    "password": "tomer1234",
+    "role": "user",
+    "imgUrl": "https://dog.ceo/api/breeds/image/random"
+  },
+  {
+    "_id": "u103",
+    "fullName": "Tut",
+    "username": "tut",
+    "password": "tut1234",
+    "role": "user",
+    "imgUrl": "https://dog.ceo/api/breeds/image/random"
+  },
+  {
+    "username": "admin",
+    "password": "admin",
+    "fullName": "Admin",
+    "_id": "GG8o6T",
+    "role": "admin",
+    "createAt": 1729872531708,
+    "imgUrl": "https://dog.ceo/api/breeds/image/random"
+  }
+]

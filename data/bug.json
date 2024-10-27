@@ -1,0 +1,55 @@
+[
+  {
+    "_id": "Rhiy76",
+    "title": "tut",
+    "description": "gorda",
+    "severity": 1,
+    "createdAt": 1542107359454,
+    "owner": {
+      "_id": "u101",
+      "fullName": "Muki Ja"
+    },
+    "labels": [
+      "critical",
+      "need-CR",
+      "dev-branch"
+    ]
+  },
+  {
+    "_id": "Rhiy73",
+    "title": "bug 2",
+    "description": "critical bug",
+    "severity": 88,
+    "createdAt": 1542107359454,
+    "owner": {
+      "_id": "u102",
+      "fullName": "Tomer C"
+    },
+    "labels": [
+      "critical"
+    ]
+  },
+  {
+    "_id": "Rhiy60",
+    "title": "bug 3",
+    "description": "normal bug",
+    "severity": 60,
+    "createdAt": 1542107359454,
+    "owner": {
+      "_id": "u103",
+      "fullName": "Tut"
+    },
+    "labels": []
+  },
+  {
+    "title": "bug test",
+    "description": "bug 2 test",
+    "severity": 44,
+    "createdAt": 1729876190747,
+    "owner": {
+      "_id": "u103",
+      "fullName": "Tut"
+    },
+    "_id": "N1JqI1"
+  }
+]
