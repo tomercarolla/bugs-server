@@ -1,5 +1,6 @@
 import {utilService} from "../../services/util.service.js";
 import {loggerService} from "../../services/logger.service.js";
+import {bugService} from "../bug/bug.service.js";
 
 export const userService = {
     query,
@@ -51,13 +52,20 @@ async function remove(userId) {
 
         if (idx === -1) throw `Couldn't find user with _id ${userId}`;
 
+        const bugs = await bugService.query();
+        const hasOwnedBugs = bugs.some(bug => bug.owner._id === userId);
+
+        loggerService.info('hasOwnedBugs: ', `User with _id ${userId} owns bugs and cannot be deleted`);
+
+        if (hasOwnedBugs) throw `You can't delete this user.`;
+
         users.splice(idx, 1);
 
         await _saveUsers();
     } catch (err) {
         loggerService.error(err);
 
-        throw `Couldn't remove user`;
+        throw err;
     }
 }
 

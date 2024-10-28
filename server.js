@@ -14,7 +14,7 @@ const corsOptions = {
     credentials: true,
 }
 
-const port = 3030;
+const port = process.env.PORT || 3030;
 
 app.use(express.static('public'));
 app.use(cors(corsOptions));

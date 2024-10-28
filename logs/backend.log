@@ -85,3 +85,18 @@
 27.10.2024, 15:10:46 - INFO - visited route /logout
 27.10.2024, 15:10:49 - INFO - visited route /login
 27.10.2024, 15:10:49 - INFO - User login:  | {"_id":"GG8o6T","fullName":"Admin","role":"admin","imgUrl":"https://dog.ceo/api/breeds/image/random"}
+28.10.2024, 19:19:12 - ERROR - TypeError: bugs.some is not a function
+28.10.2024, 19:20:23 - INFO - hasOwnedBugs:  | User with _id u102 owns bugs and cannot be deleted
+28.10.2024, 19:20:23 - ERROR - You can't delete this user.
+28.10.2024, 19:20:34 - ERROR - You can't delete this user.
+28.10.2024, 19:20:34 - INFO - hasOwnedBugs:  | User with _id u102 owns bugs and cannot be deleted
+28.10.2024, 19:21:32 - INFO - hasOwnedBugs:  | User with _id u102 owns bugs and cannot be deleted
+28.10.2024, 19:21:32 - ERROR - You can't delete this user.
+28.10.2024, 19:22:26 - INFO - hasOwnedBugs:  | User with _id u102 owns bugs and cannot be deleted
+28.10.2024, 19:22:26 - ERROR - You can't delete this user.
+28.10.2024, 19:22:53 - INFO - hasOwnedBugs:  | User with _id u102 owns bugs and cannot be deleted
+28.10.2024, 19:22:53 - ERROR - You can't delete this user.
+28.10.2024, 19:23:20 - ERROR - You can't delete this user.
+28.10.2024, 19:23:20 - INFO - hasOwnedBugs:  | User with _id u102 owns bugs and cannot be deleted
+28.10.2024, 19:23:36 - INFO - hasOwnedBugs:  | User with _id u102 owns bugs and cannot be deleted
+28.10.2024, 19:23:36 - ERROR - You can't delete this user.
