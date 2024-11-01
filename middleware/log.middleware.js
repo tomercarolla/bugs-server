@@ -1,9 +1,9 @@
-import {loggerService} from "../services/logger.service.js";
+import { loggerService } from "../services/logger.service.js";
 
 export function log(req, res, next) {
-    const { path } = req.route;
+  const { path } = req.route;
 
-    loggerService.info(`visited route ${path}`);
+  loggerService.info(`visited route ${path}`);
 
-    next();
+  next();
 }

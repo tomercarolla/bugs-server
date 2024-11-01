@@ -1,1 +1,1 @@
-export * from './bug.controller.js';
+export * from "./bug.controller.js";
