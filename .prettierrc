@@ -1,0 +1,8 @@
+{
+  "plugins": ["prettier-plugin-organize-imports"],
+  "editorconfig": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "trailingComma": "all",
+}
