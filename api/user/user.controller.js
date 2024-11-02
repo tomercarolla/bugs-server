@@ -30,8 +30,12 @@ userCtrl.get("/:userId", requireAuth, admin, async (req, res) => {
 });
 
 userCtrl.post("/", requireAuth, admin, async (req, res) => {
-  const { score } = req.body;
-  const userToSave = { ...req.body, score: +score };
+  const { user } = req.body;
+  const userToSave = {
+    username: user.username,
+    password: user.password,
+    fullName: user.fullName,
+  };
 
   try {
     const savedUser = await userService.save(userToSave);

@@ -4,6 +4,7 @@ import express from "express";
 import path from "path";
 import { authCtrl } from "./api/auth/index.js";
 import { bugCtrl, userCtrl } from "./api/index.js";
+import { loggerService } from "./services/logger.service.js";
 
 const app = express();
 
@@ -12,7 +13,6 @@ const corsOptions = {
   credentials: true,
 };
 
-// eslint-disable-next-line no-unused-vars
 const port = process.env.PORT || 3030;
 
 app.use(express.static("public"));
@@ -27,4 +27,6 @@ app.get("/**", (req, res) => {
   res.sendFile(path.resolve("public/index.html"));
 });
 
-app.listen(3030, () => console.info("Server is running on port 3030"));
+app.listen(3030, () =>
+  loggerService.info(`Server is running on port: ${port}`),
+);

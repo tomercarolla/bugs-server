@@ -76,7 +76,7 @@ bugCtrl.post("/", requireAuth, async (req, res) => {
   };
 
   try {
-    const savedBug = await bugService.save(bugToSave);
+    const savedBug = await bugService.add(bugToSave);
 
     res.send(savedBug);
   } catch (error) {
