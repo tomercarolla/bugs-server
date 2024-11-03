@@ -2,8 +2,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
 import path from "path";
-import { authCtrl } from "./api/auth/index.js";
-import { bugCtrl, userCtrl } from "./api/index.js";
+import { authCtrl, bugCtrl, messageCtrl, userCtrl } from "./api/index.js";
 import { loggerService } from "./services/logger.service.js";
 
 const app = express();
@@ -22,6 +21,7 @@ app.use(cookieParser());
 app.use("/api/bug", bugCtrl);
 app.use("/api/user", userCtrl);
 app.use("/api/auth", authCtrl);
+app.use("/api/message", messageCtrl);
 
 app.get("/**", (req, res) => {
   res.sendFile(path.resolve("public/index.html"));
