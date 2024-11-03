@@ -11,6 +11,7 @@ userCtrl.get("/", requireAuth, admin, async (req, res) => {
 
   try {
     const users = await userService.query(filterBy);
+
     res.send(users);
   } catch (error) {
     res.status(400).send(error);
@@ -46,18 +47,18 @@ userCtrl.post("/", requireAuth, admin, async (req, res) => {
   }
 });
 
-userCtrl.put("/:userId", requireAuth, admin, async (req, res) => {
-  const { score } = req.body;
-  const userToSave = { ...req.body, score: +score };
-
-  try {
-    const savedUser = await userService.save(userToSave);
-
-    res.send(savedUser);
-  } catch (error) {
-    res.status(400).send(error);
-  }
-});
+// userCtrl.put("/:userId", requireAuth, admin, async (req, res) => {
+//   const { score } = req.body;
+//   const userToSave = { ...req.body, score: +score };
+//
+//   try {
+//     const savedUser = await userService.save(userToSave);
+//
+//     res.send(savedUser);
+//   } catch (error) {
+//     res.status(400).send(error);
+//   }
+// });
 
 userCtrl.delete("/:userId", requireAuth, admin, async (req, res) => {
   const { userId } = req.params;

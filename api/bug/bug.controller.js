@@ -86,8 +86,11 @@ bugCtrl.post("/", requireAuth, async (req, res) => {
 
 bugCtrl.put("/:bugId", requireAuth, async (req, res) => {
   const user = req.loggedInUser;
-  const { severity } = req.body;
-  const bugToSave = { ...req.body, severity: +severity };
+  const { _id, severity } = req.body;
+  const bugToSave = {
+    _id,
+    severity: +severity,
+  };
 
   try {
     const savedBug = await bugService.save(bugToSave, user);
