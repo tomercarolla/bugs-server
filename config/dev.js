@@ -1,4 +1,5 @@
 export default {
-  dbURL: "mongodb://127.0.0.1:27017",
-  dbName: "tester_db",
+  dbURL:
+    "mongodb+srv://tomer:P1ttaMj02hrzGLbO@cluster0.p8mfd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  dbName: "BUG_DB",
 };

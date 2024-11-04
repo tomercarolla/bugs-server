@@ -32,7 +32,6 @@ function validateToken(token) {
 
 async function login(username, password) {
   const user = await userService.getByUsername(username);
-  console.info(password);
 
   if (!user) throw "User not found";
 

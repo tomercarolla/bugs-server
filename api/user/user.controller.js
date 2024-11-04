@@ -6,11 +6,8 @@ import { userService } from "./user.service.js";
 export const userCtrl = Router();
 
 userCtrl.get("/", requireAuth, admin, async (req, res) => {
-  const { username, score, pageIdx } = req.query;
-  const filterBy = { username, score: +score, pageIdx };
-
   try {
-    const users = await userService.query(filterBy);
+    const users = await userService.query();
 
     res.send(users);
   } catch (error) {
