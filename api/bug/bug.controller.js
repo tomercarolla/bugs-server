@@ -5,13 +5,22 @@ import { bugService } from "./bug.service.js";
 export const bugCtrl = Router();
 
 bugCtrl.get("/", requireAuth, async (req, res) => {
-  const { severity, labels, pageIdx } = req.query;
+  const { severity, labels, title, sortBy, sortDir } = req.query;
   const filterBy = {
-    ...req.query,
-    severity: +severity,
-    labels: labels ? labels.split(",") : undefined,
-    pageIdx,
+    criteria: {
+      title: { $regex: title || "", $options: "i" },
+      severity: { $gte: severity ? +severity : 0 },
+    },
+    sort: {},
   };
+
+  if (labels) {
+    filterBy.criteria.labels = { $in: labels.split(",") };
+  }
+
+  if (sortBy) {
+    filterBy.sort[sortBy] = sortDir === "-1" ? -1 : 1;
+  }
 
   try {
     const bugs = await bugService.query(filterBy);

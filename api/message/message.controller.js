@@ -15,26 +15,19 @@ messageCtrl.get("/", requireAuth, async (req, res) => {
   }
 });
 
-messageCtrl.get("/:messageId", requireAuth, async (req, res) => {
-  const { messageId } = req.params;
-
-  try {
-    const message = await messageService.getById(messageId);
-
-    res.send(message);
-  } catch (error) {
-    res.status(400).send(error);
-  }
-});
-
 messageCtrl.post("/", requireAuth, async (req, res) => {
-  const { message } = req.body;
-  const messageToSave = {
-    txt: message.txt,
-  };
-
   try {
-    const savedMessage = await messageService.save(messageToSave);
+    const { message } = req.body;
+    const { aboutBugId } = message;
+    const user = req.loggedInUser;
+
+    message.aboutBugId = aboutBugId;
+    message.byUserId = user._id;
+
+    const savedMessage = await messageService.save(message);
+
+    delete savedMessage.aboutBugId;
+    delete savedMessage.byUserId;
 
     res.send(savedMessage);
   } catch (error) {
